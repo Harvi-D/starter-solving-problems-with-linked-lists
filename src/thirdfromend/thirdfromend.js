@@ -10,21 +10,21 @@ const LinkedList = require("../lib/linkedList");
  *
  */
 function thirdFromEnd(list) {
-    if (list.length <= 0) {
+    if (!list.head) {
         return null
     }
     let pointer1 = list.head;
-     i = 0;
+     let i = 0;
 
-    while ( i < 2 && pointer1.next ) {
+    while (i < 2 && pointer1.next) {
         pointer1 = pointer1.next;
         i++;
     }
-    if ( i < 2 ) {
+    if (i < 2) {
         return null;
     }
     let pointer2 = list.head;
-    while ( pointer1.next ) {
+    while (pointer1.next) {
         pointer1 = pointer1.next;
         pointer2 = pointer2.next;
     }
